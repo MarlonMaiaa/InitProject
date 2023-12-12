@@ -14,23 +14,34 @@ public class InitProject {
 
     public static void main(String[] args) {
    
-        float n1 , n2 , n3 , m;
-        Scanner tc =  new Scanner (System.in);
-        
-        System.out.println("Qual é a primeira nota do aluno: ");
-        n1 = tc.nextFloat();
-        System.out.println("Qual e a segunda nota do aluno: ");
-        n2 = tc.nextFloat();
-        System.out.println("Qual e a terceira nota do aluno: ");
-        n3 = tc.nextFloat();
-        
-       m = (n1+n2+n3)/3;
-        System.out.println("A nota do aluno e: "+m);
-        
-        if (m>=7) { System.out.println("O aluno esta aprovado com a nota "+ m);
-        }
-        else { System.out.println("O aluno esta reprovado com a nota "+m);
-            
-        }
+       // Atributos
+       float n1 =0 ,n2 =0  ,n3 =0,m;
+       String n;
+
+
+       // leitor Scanner
+       Scanner tc = new Scanner (System.in);
+       // Abstracao
+       System.out.println("Qual e o nome do aluno: ");
+       n = tc.nextLine();
+
+       System.out.println(" Qual e a primeira nota do aluno "+n+ ":");
+       n1 = tc.nextFloat();
+
+       System.out.println("Qual e a segunda nota do aluno "+n+":");
+       n2 = tc.nextFloat();
+
+       System.out.println("Qual e a terceira nota do aluno"+n+":");
+       n3 = tc.nextFloat();
+       // calculo
+      m =  (n1+n2+n3)/3;
+      if (m>=7 && m <= 9) {
+          System.out.printf("Parabens ao aluno  "+n+" esta aprovado , com a  nota %.1f  ",m );}
+       else if (m>=9) {
+           System.out.printf("Parabens "+n+" sua nota foi excelente %.1f",m);
+       }
+      if (m <7) {
+          System.out.printf ("Infelizmente o aluno "+n+" nao alcançou a nota minima , nota: %.1f ",m);
+      }
     }
 }
